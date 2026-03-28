@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Authorization Successful</title></head>
+<body>
+  <h1>Authorization Successful</h1>
+  <p>You have successfully connected your TikTok account. You can now close this window and return to the app.</p>
+  <script>
+    // Send the authorization code back to the desktop app
+    if (window.location.search) {
+      fetch('http://localhost:8080/callback' + window.location.search)
+        .catch(() => {});
+    }
+  </script>
+</body>
+</html>
